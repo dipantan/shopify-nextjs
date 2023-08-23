@@ -1,10 +1,10 @@
 import Client from "shopify-buy";
 
 export const shopifyClient = Client.buildClient({
-  storefrontAccessToken: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!,
-  domain: process.env.SHOPIFY_DOMAIN!,
-  apiVersion: "",
+  storefrontAccessToken:
+    process.env.NEXT_PUBLIC_SHOPIFY_STORE_FRONT_ACCESS_TOKEN,
+  domain: process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN,
 });
 
-export const parseShopifyResponse = (response: Client.Product[]) =>
+export const parseShopifyResponse = (response) =>
   JSON.parse(JSON.stringify(response));
